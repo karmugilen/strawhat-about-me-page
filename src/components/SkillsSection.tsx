@@ -8,37 +8,37 @@ const SkillsSection: React.FC = () => {
       name: "Combat",
       icon: <Swords className="h-8 w-8 mb-4 text-white" />,
       description: "Expert in hand-to-hand combat using my rubber Devil Fruit powers",
-      color: "from-red-500 to-red-700",
+      colorClass: "from-red-500 to-red-700",
     },
     {
       name: "Navigation",
       icon: <Navigation className="h-8 w-8 mb-4 text-white" />,
       description: "Finding my way through the Grand Line with my trusted navigator",
-      color: "from-blue-500 to-blue-700",
+      colorClass: "from-blue-500 to-blue-700",
     },
     {
       name: "Leadership",
       icon: <Users className="h-8 w-8 mb-4 text-white" />,
       description: "Inspiring and leading my crew through countless adventures",
-      color: "from-yellow-500 to-yellow-700",
+      colorClass: "from-yellow-500 to-yellow-700",
     },
     {
       name: "Willpower",
       icon: <ShieldAlert className="h-8 w-8 mb-4 text-white" />,
       description: "Unwavering determination and Conqueror's Haki",
-      color: "from-purple-500 to-purple-700",
+      colorClass: "from-purple-500 to-purple-700",
     },
     {
       name: "Adaptability",
       icon: <Brain className="h-8 w-8 mb-4 text-white" />,
       description: "Quick thinking and creative problem solving in any situation",
-      color: "from-green-500 to-green-700",
+      colorClass: "from-green-500 to-green-700",
     },
     {
       name: "Empathy",
       icon: <Heart className="h-8 w-8 mb-4 text-white" />,
       description: "Understanding and connecting with people from all backgrounds",
-      color: "from-pink-500 to-pink-700",
+      colorClass: "from-pink-500 to-pink-700",
     },
   ];
 
@@ -54,12 +54,7 @@ const SkillsSection: React.FC = () => {
           {skills.map((skill, index) => (
             <div 
               key={index}
-              className="devil-fruit bg-gradient-to-br p-6 text-center"
-              style={{
-                backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
-                "--tw-gradient-from": skill.color.split(" ")[0].replace("from-", ""),
-                "--tw-gradient-to": skill.color.split(" ")[1].replace("to-", ""),
-              }}
+              className={`devil-fruit bg-gradient-to-br ${skill.colorClass} p-6 text-center`}
             >
               <div className="flex flex-col items-center justify-center h-full">
                 {skill.icon}
